@@ -1,0 +1,33 @@
+#include<stdio.h>
+void minimax(int a[],int n)
+{
+    int i,j,temp;
+    printf("The descending order is as follow:\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]>a[i])
+            {
+                temp=a[j];
+                a[j]=a[i];
+                a[i]=temp;
+                printf("%d",a[i]);
+            }
+            printf("\n");
+        }
+    }
+}
+int main()
+{
+    int a[100],n,i;
+    printf("Enter the size of array:");
+    scanf("%d",&n);
+    printf("Enter the elements of array:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    minimax(a,n);
+    return 0;
+}
